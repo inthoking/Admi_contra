@@ -8,6 +8,7 @@ class LoginController:
         self.user = User("admin", "password")  # Usuario de ejemplo
 
     def show_login_view(self):
+        self.clear_frame()
         self.login_frame = LoginView(self.root, self.authenticate,self.show_register_view )
         self.login_frame.pack(fill="both", expand=True)
 
@@ -22,3 +23,15 @@ class LoginController:
             print("Login successful")
         else:
             print("Login failed")
+
+    def clear_frame(self):
+        for widget in self.root.winfo_children():
+            widget.destroy()
+
+    def register_user(self, User,):
+        if self.api_client.create_user(User):
+            print("User registered successfully")
+            self.show_login_view()
+        else:
+            print("Registration failed")
+    

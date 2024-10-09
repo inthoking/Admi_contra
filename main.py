@@ -3,7 +3,7 @@ from controllers.login_control import LoginController
 
 def main():
     app = ctk.CTk()
-    app.geometry("400x300")
+    app.geometry("800x600")
     app.title("Login App")
 
     controller = LoginController(app)
