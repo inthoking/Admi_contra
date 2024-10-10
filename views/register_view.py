@@ -1,4 +1,5 @@
 import customtkinter as ctk
+import json
 
 
 class RegisterView(ctk.CTkFrame): #esto es un pantalla con dos columnas 
@@ -55,9 +56,9 @@ class RegisterView(ctk.CTkFrame): #esto es un pantalla con dos columnas
 
     def register(self):
         User_name = self.username_entry.get()
-        Name = self.password_entry.get()
-        Last_name=self.password_entry.get()
-        Email_add=self.password_entry.get()
+        Name = self.name_entry.get()
+        Last_name=self.lastname_entry.get()
+        Email_add=self.email_entry.get()
         password= self.password_entry.get()
 
         data = {
@@ -67,8 +68,9 @@ class RegisterView(ctk.CTkFrame): #esto es un pantalla con dos columnas
                 "Email_add": Email_add,
                 "password": password,
             }
+        json_data = json.dumps(data)
         
-        self.register_callback(json=data)
+        self.register_callback(json_data)
 
     def show_login(self):
         self.show_login_callback()

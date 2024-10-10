@@ -30,6 +30,6 @@ class LoginController:
         for widget in self.root.winfo_children():
             widget.destroy()
 
-    def register_user(data_new_user):
+    def register_user(self, data_new_user:User):
         new_user=APIClient.create_user(data_new_user)
         return new_user

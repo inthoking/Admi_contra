@@ -24,8 +24,8 @@ class User:
 class APIClient:
     BASE_URL = "http://127.0.0.1:8000/users/"
 
-    def create_user(self, User: UserCreate):
-        response = requests.post("http://127.0.0.1:8000/users/", json=User)
+    def create_user( User: UserCreate):
+        response = requests.post("http://127.0.0.1:8000/users/",User)
         if response.status_code == 201:
             return response.json()
         return None
