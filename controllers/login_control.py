@@ -1,4 +1,4 @@
-from models.login_model import User
+from models.login_model import User, APIClient
 from views.login_view import LoginView
 from  views.register_view import RegisterView
 import customtkinter as ctk
@@ -30,12 +30,6 @@ class LoginController:
         for widget in self.root.winfo_children():
             widget.destroy()
 
-    def register_user(self, User,):
-        if self.api_client.create_user(User):
-            print("User registered successfully")
-            self.show_login_view()
-        else:
-            print("Registration failed")
-
-
-    
+    def register_user(data_new_user):
+        new_user=APIClient.create_user(data_new_user)
+        return new_user

@@ -54,9 +54,21 @@ class RegisterView(ctk.CTkFrame): #esto es un pantalla con dos columnas
         return "break"
 
     def register(self):
-        username = self.username_entry.get()
-        password = self.password_entry.get()
-        self.register_callback(username, password)
+        User_name = self.username_entry.get()
+        Name = self.password_entry.get()
+        Last_name=self.password_entry.get()
+        Email_add=self.password_entry.get()
+        password= self.password_entry.get()
+
+        data = {
+                "User_name": User_name,
+                "Name": Name,
+                "Last_name": Last_name,
+                "Email_add": Email_add,
+                "password": password,
+            }
+        
+        self.register_callback(json=data)
 
     def show_login(self):
         self.show_login_callback()
